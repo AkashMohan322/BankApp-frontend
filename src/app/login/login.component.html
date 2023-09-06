@@ -1,0 +1,121 @@
+<!-- navbar -->
+<nav class="navbar bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">
+        <img src="https://www.janathacareers.com/wp-content/uploads/2021/05/Canara-Bank.png" alt="Logo" width="30px" height="30px" class="d-inline-block align-text-top">
+        Canara Bank
+      </a>
+    </div>
+  </nav>
+
+  <!-- login form  -->
+
+  <div class="container">
+    <div class="row">
+    <div class="col-6 mt-5 mb-5">
+      <!-- image  -->
+      <img src="https://th.bing.com/th/id/R.88c78d17bb9bc202edc0c1fc2eb38f32?rik=LkUyQO64xeKtbw&riu=http%3a%2f%2felitetechnocrats.com%2fimages%2fsoftware_devlopment.gif&ehk=6AD7zgGC6jwLfDIHxT0litMN1sq3X3g2USbMwlyMxn4%3d&risl=&pid=ImgRaw&r=0" width="100%" height="400px" alt="">
+    </div>
+    <div class="col-6 card shadow border-2 mt-5 mb-5">
+      <form (ngSubmit)="login()" [formGroup]="loginForm">
+        <div class="mb-3">
+          <h3 class="mb-3 mt-3 text-center fs-2 text-primary text-uppercase"><strong>Login</strong></h3>
+          <label for="exampleInputEmail1" class="form-label"><b>Account Number</b></label>
+          <input formControlName="acno" name="acno" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div *ngIf="this.loginForm.get('acno')?.errors&&this.loginForm.get('acno')?.touched" class="text-danger">*Invalid Account Number</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"><b>Password</b></label>
+          <input formControlName="password" name="password" type="password" class="form-control" id="exampleInputPassword1">
+          <div *ngIf="this.loginForm.get('password')?.errors&&this.loginForm.get('password')?.touched" class="text-danger">*Invalid Password</div>
+        </div>
+        <div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Remember me</label>
+        </div>
+        <div class="text-center mt-3">
+          <h4 class="text-danger">{{loginError}}</h4>
+        <button type="submit" class="btn btn-primary mb-2">Sign in
+          <div *ngIf="loginSuccess" class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </button>
+        <p>New to here?<a routerLink="register">Please Register</a></p>
+      </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- footer  -->
+<footer class="bg-primary text-center text-white mt-5">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #3b5998;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #55acee;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #dd4b39;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #0082ca;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #333333;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white" href="https://canarabank.com/">Canarabank.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>

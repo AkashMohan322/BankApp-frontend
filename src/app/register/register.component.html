@@ -1,0 +1,147 @@
+<!-- navbar -->
+<nav class="navbar bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">
+        <img src="https://www.janathacareers.com/wp-content/uploads/2021/05/Canara-Bank.png" alt="Logo" width="30px" height="30px" class="d-inline-block align-text-top">
+        Canara Bank
+      </a>
+    </div>
+  </nav>
+  <!-- Register landing page -->
+  <div *ngIf="RegisterSuccess" class="container text-center mt-5 p-2">
+<h1>Your Data Getting Registered...Please Wait...
+  <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</h1>
+  </div>
+  
+  
+  <!-- main -->
+  <div *ngIf="!RegisterSuccess" class="container mt-5">
+    <div class="row">
+      <div class="col-6">
+        <div class="image">
+          <img src="https://i.pinimg.com/originals/89/67/92/8967925b9d9141e88ced0a9020bdbc5e.gif" width="100%" alt="">
+        </div>
+  
+      </div>
+      <div class="col-6"><section>
+        
+        <div class="mask d-flex align-items-center w-400 h-60 gradient-custom-3">
+          <div class="container  h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div>
+                <div class="card mb-5 mt-2 shadow" style="border-radius: 15px;">
+                  <div class="card-body p-4" style=" border-radius: 8px;">
+                    <h2 class="text-uppercase text-center mb-5 text-primary"><strong>Create an account</strong></h2>
+      
+                    <form (ngSubmit)="register()" [formGroup]="registerForm">
+    
+                      <div class="form-outline mb-4">
+                        <input formControlName="acno"  type="text" name="name" class="form-control form-control-lg" placeholder="Account Number"/>
+                        <div *ngIf="this.registerForm.get('acno')?.errors&&this.registerForm.get('acno')?.touched" class="text-danger">*Invalid Account Number</div>
+                      </div>
+    
+                  <div class="form-outline mb-4">
+                    <input  type="text" formControlName="username" name="username"  class="form-control form-control-lg" placeholder="User Name"/>
+                    <div *ngIf="this.registerForm.get('username')?.errors&&this.registerForm.get('username')?.touched" class="text-danger">*Invalid Username</div>
+                  </div>
+    
+                  <div class="form-outline mb-4">
+                    <input  type="password" formControlName="password" name="password" class="form-control form-control-lg" placeholder="Password"/>
+                    <div *ngIf="this.registerForm.get('password')?.errors&&this.registerForm.get('password')?.touched" class="text-danger">*Invalid Password</div>  
+                  </div>
+    
+                 
+    
+                  <div class="d-flex justify-content-center">
+                    <h4 class="text-danger">{{RegisterError}}</h4>
+                    <button type="submit" 
+                       class="btn btn-primary btn-block btn-lg gradient-custom-4 ">Register</button>
+                  </div>
+    
+                  <p class="text-center mt-3 mb-0 "><strong>Already have an account? </strong><a href="#!"><u><strong>Login</strong></u></a></p>
+    
+                </form>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section></div>
+    </div>
+  </div>
+  
+ <!-- footer  -->
+<footer class="bg-primary text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #3b5998;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Twitter -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #55acee;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Google -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #dd4b39;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #ac2bac;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #0082ca;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <!-- Github -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #333333;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-white" href="https://canarabank.com/">Canarabank.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
